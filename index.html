@@ -9,25 +9,24 @@
 </head>
 <body>
     
-    <nav class="nav-bar">
-        <img src="images/Cookpal 1.svg" alt="">
-        <div class="hamburger-menu" id="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class="menu-items" id="menu-items">
-            <li style="color: #509E2F;
-                font-family: Poppins;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;">Home</li>
-            <li>Explore</li>
-            <li>Help</li>
-            <li><img src="images/Profile.svg" alt="" srcset=""></li>
+    <header class="header">
+        <a href="" class="logo"><img src="./images/Cookpal 1.svg" alt=""></a>
+      
+      <!--    hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it. -->
+         <input type="checkbox" class="menu-btn" id="menu-btn" />
+        
+        <!-- label class used for tageting the checkbox -->
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+        <ul class="menu">
+          <li><a href="#work">Home</a></li>
+          <li><a href="#about">Explore</a></li>
+          <li><a href="#careers">Help</a></li>
+          <li><a href="#contact"><img src="./images/Profile.svg" alt=""></a></li>
         </ul>
-    </nav>
+       
+      </header>
 
 <section class="hero">
     <img style="position: relative;" src="images/Rectangle 20.svg" alt="">
