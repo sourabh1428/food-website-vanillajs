@@ -198,12 +198,18 @@ searchBar.addEventListener("input",function(){
         if(arr[i].name.toLowerCase().includes(x.toLowerCase())){
 
         
-        let a=arr[i];
-
-        const card=document.createElement("div");
-        card.setAttribute("class","card");
-        card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button id="likeMe"><img src="./images/like.svg" alt=""></button> <img src="./images/comments.svg" alt=""></div></div></div>`
-        recipee.append(card);
+            let a=arr[i];
+            const card=document.createElement("div");
+            card.setAttribute("class","card");
+            card.setAttribute("id",`${i}`);
+            if(a.isLiked){
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="liked" id="likeMe" onclick="likeLe(event)"><img  src="./images/liked.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+            }
+            else{
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="notliked" onclick="likeLe(event)"  id="unlikeMe"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+            }
+            
+            recipee.append(card);
     }
     }
 
@@ -238,15 +244,22 @@ function searchMe(){
         if(arr[i].name.toLowerCase().includes(x.toLowerCase())){
         
         
-        let a=arr[i];
-
-        const card=document.createElement("div");
-        card.setAttribute("class","card");
-        card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><img id="likeMe" src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></div></div></div>`
-        recipee.append(card);
-    }
+            let a=arr[i];
+            const card=document.createElement("div");
+            card.setAttribute("class","card");
+            card.setAttribute("id",`${i}`);
+            if(a.isLiked){
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="liked" id="likeMe" onclick="likeLe(event)"><img  src="./images/liked.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+            }
+            else{
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="notliked" onclick="likeLe(event)"  id="unlikeMe"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+            }
+            
+            recipee.append(card);
+    
     }
     console.log(recipee);
+}
 }
 
 
@@ -258,14 +271,17 @@ function onlyVeg(){
         
         for(let i=0;i<arr.length;i++){
             let a=arr[i];
-      
-            if(arr[i].type.toLowerCase().includes("non")==false){
-                   
-                            const card=document.createElement("div");
-                            card.setAttribute("class","card");
-                            card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><img id="likeMe" src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></div></div></div>`
-                            recipee.append(card);     
+            const card=document.createElement("div");
+            card.setAttribute("class","card");
+            card.setAttribute("id",`${i}`);
+            if(a.isLiked){
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="liked" id="likeMe" onclick="likeLe(event)"><img  src="./images/liked.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
             }
+            else{
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="notliked" onclick="likeLe(event)"  id="unlikeMe"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+            }
+            
+            recipee.append(card);
         }
 }
 function onlyNonVeg(){
@@ -277,12 +293,18 @@ function onlyNonVeg(){
             if(arr[i].type.toLowerCase().includes(x)){
             
             
-            let a=arr[i];
-
-            const card=document.createElement("div");
-            card.setAttribute("class","card");
-            card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></div></div></div>`
-            recipee.append(card);
+                let a=arr[i];
+                const card=document.createElement("div");
+                card.setAttribute("class","card");
+                card.setAttribute("id",`${i}`);
+                if(a.isLiked){
+                    card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="liked" id="likeMe" onclick="likeLe(event)"><img  src="./images/liked.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+                }
+                else{
+                    card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="notliked" onclick="likeLe(event)"  id="unlikeMe"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
+                }
+                
+                recipee.append(card);
         }
         }
 }
@@ -297,18 +319,21 @@ function showAll(){
     }
    
         for(let i=0;i<arr.length;i++){
-           
-            let ze;
             let a=arr[i];
+            let ze;
+            
             if(a.isLiked)ze==true;
+            
             const card=document.createElement("div");
             card.setAttribute("class","card");
-            if(ze){
-                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><img  id="likeMe" src="./images/like (1).svg" alt=""> <img src="./images/comments.svg" alt=""></div></div></div>`
+            card.setAttribute("id",`${i}`);
+            if(a.isLiked){
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="liked" id="likeMe" onclick="likeLe(event)"><img  src="./images/liked.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
             }
             else{
-            card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><img id="likeMe" src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></div></div></div>`
+                card.innerHTML=`<img src=${a.imageSrc} alt=""><div class="cardBody"><p class="vegornon">${a.type}</p><div class="c1"><h1 id="name">${a.name}</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">${a.rating}</p></div></div><div class="c2"><h1 id="time">${a.time}</h1> <div style="display: flex;flex-direction: row; gap:10px"><button class="notliked" onclick="likeLe(event)"  id="unlikeMe"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></button></div></div></div>`
             }
+            
             recipee.append(card);
         }
         }
@@ -392,12 +417,3 @@ function filterRecipesAbove() {
 
 
  }
-
- const hamburgerMenu = document.getElementById("hamburger-menu");
- const menuItems = document.getElementById("menu-items");
- 
- hamburgerMenu.addEventListener("pointerdown", (event) => {
-     menuItems.classList.toggle("show-menu");
-     event.target.setPointerCapture(event.pointerId);
- });
- 
