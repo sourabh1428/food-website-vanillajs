@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav class="nav-bar">
+        <img src="images/Cookpal 1.svg" alt="">
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="menu-items" id="menu-items">
+            <li style="color: #509E2F;
+                font-family: Poppins;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;">Home</li>
+            <li>Explore</li>
+            <li>Help</li>
+            <li><img src="images/Profile.svg" alt="" srcset=""></li>
+        </ul>
+    </nav>
+
+<section class="hero">
+    <img style="position: relative;" src="images/Rectangle 20.svg" alt="">
+    <div class="herotext"><h2>Trending Now</h2>
+    <h1>Mike’s famous salad
+        with cheese</h1>
+    <p>By John Mike</p></div>
+</section>
+<div class="sfrc"><h2 class="searchforRecipee">Search For Recipee</h2></div>
+
+
+<div class="searchRecipee"><input type="text"  id="searchBar"><i style="position: absolute; left: 300px;color: var(--Grey, #ADADAD);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;">Search for Recipee</i> <button onclick="searchMe()">Search</button></div>
+<div class="typesOfR">
+    <div onclick="showAll()" class="tor1">All Recipee             ></div>
+    <div onclick="onlyVeg()" class="tor2">Veg Recipee only          ></div>
+    <div onclick="onlyNonVeg()" class="tor3"">Non-Veg Recipee         ></div>
+</div>
+
+<div class="recipee">
+
+    <div class="filters">
+        <h1>Filters</h1>
+        <h2>Ratings</h2>
+        <ul><li><input style="background-color: #509E2F;" id="ratingFourAbove" type="checkbox" value=""> 4 and Above</li>
+        <li> <input style="background-color: #509E2F;" type="checkbox" name="" id="ratingFourBelow"> Below 4</li></ul>
+
+    </div>
+    <div class="allrecipee" id="recipe">
+        
+        <!-- <div class="card">
+            <img src="https://source.unsplash.com/random?chocolateCake" alt="">
+            <div class="cardBody">
+            <p class="vegornon">NonVeg</p>
+            <div class="c1"><h1 id="name">Russian salad</h1> <div class="c11"><img src="./images/Star.svg" alt=""><p id="ratings">4.3</p></div></div>
+            <div class="c2"><h1 id="time">40 min</h1> <div style="display: flex;flex-direction: row; gap:10px"><img src="./images/like.svg" alt=""> <img src="./images/comments.svg" alt=""></div></div>
+        </div>
+    </div> -->
+ 
+    </div>
+
+
+</div>
+
+
+<footer>
+    <div class="f1">
+        <img src="./images/Cookpal 1.svg" alt="">
+        <p>Cookpal is a recipe website with a wide variety of delicious recipes, easy-to-use search function.
+             Join our community and let's cook together!</p>
+    </div>
+    <div class="f2">
+        <h1>Company</h1>
+        <ul>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+            <li>Home</li>
+
+        </ul>
+    </div>
+    <div class="f3">
+        <h1>Resources</h1>
+        <ul>
+            <li>Blog</li>
+            <li>Blog</li>
+            <li>Blog</li>
+            <li>Blog</li>
+            <li>Blog</li>
+
+        </ul>
+    </div>
+    <div class="f4">
+        <img src="./images/Cookpal 1.svg" alt="">
+        <p>Ut risus mattis interdum faucibus facilisi. Facilisi purus accumsan aliquam.</p>
+        <div>
+            <input type="text" placeholder="Your Email Address">
+            <button>Subscribe Now</button>
+        </div>
+
+    </div>
+
+
+
+</footer>
+
+<div class="social-media">
+    <div>
+        <img src="./images/instagram.svg" alt="">
+        <img src="./images/Facebook.svg" alt="">
+        <img src="./images/Linkedin.svg" alt="">
+        <img src="./images/Twitter.svg" alt="">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="index.js"></script>    
+</body>
+</html>
