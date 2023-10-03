@@ -576,9 +576,15 @@ footer{
     
     
     }
-/* Your existing styles for the desktop navigation menu */
 
-/* Add styles for the hamburger menu */
+.liked:hover{
+    cursor: pointer;
+}
+.notliked :hover{
+    cursor: pointer;
+}
+
+
 .hamburger-menu {
     cursor: pointer;
     display: flex;
