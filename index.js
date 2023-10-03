@@ -271,6 +271,7 @@ function onlyVeg(){
         
         for(let i=0;i<arr.length;i++){
             let a=arr[i];
+            if(!a.type.includes("non")){
             const card=document.createElement("div");
             card.setAttribute("class","card");
             card.setAttribute("id",`${i}`);
@@ -283,6 +284,7 @@ function onlyVeg(){
             
             recipee.append(card);
         }
+    }
 }
 function onlyNonVeg(){
     while(recipee.firstChild){
